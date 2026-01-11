@@ -1,0 +1,35 @@
+body {
+    background-color: #f2a971;
+    color: #5e2304;
+    width: fit-content;
+    margin-left: 20px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+li {
+    font-size: 24px;
+    list-style-type: none;
+}
+
+a {
+    color: #db1717;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f27d4a;
+    text-decoration: underline;
+}
+
+/*Not using this yet, of course, but I will as the class continues*/
+#completed {
+    text-decoration: line-through;
+}
