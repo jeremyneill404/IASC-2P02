@@ -11,7 +11,7 @@ const canvas = document.querySelector(".webgl")
 //Scene
 
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('#f2a971')
+scene.background = new THREE.Color('#71f287')
 
 //Camera
 
@@ -37,13 +37,21 @@ renderer.setSize(window.innerWidth,window.innerHeight)
 /* MESHES */
 /**********/
 
-// testSphere
+// Prototype1
 const sphereGeometry = new THREE.SphereGeometry(1)
 const sphereMaterial = new THREE.MeshNormalMaterial()
 const testSphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
 
 scene.add(testSphere)
 testSphere.position.set(0, 0, 0)
+
+// testSphere
+const icosahedronGeometry = new THREE.IcosahedronGeometry(1,0)
+const icosahedronMaterial = new THREE.MeshNormalMaterial()
+const testIcosahedron = new THREE.Mesh(icosahedronGeometry, icosahedronMaterial)
+
+scene.add(testIcosahedron)
+testIcosahedron.position.set(0, 0, 0)
 
 /******************/
 /* ANIMATION LOOP */
@@ -68,10 +76,12 @@ const animation = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Animate testSphere
-    console.log(elapsedTime)
     testSphere.position.z = Math.sin(elapsedTime)
     testSphere.position.y = Math.cos(elapsedTime)
     testSphere.position.x = Math.tan(elapsedTime)
+    testIcosahedron.position.x = Math.sin(elapsedTime)
+    testIcosahedron.position.z = Math.cos(elapsedTime)
+    testIcosahedron.position.y = Math.tan(elapsedTime)
 
     //Renderer
     renderer.render(scene, camera)
